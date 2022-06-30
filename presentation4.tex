@@ -1,0 +1,106 @@
+\section{Лекція 4: Списки}
+\subsection{Створення списків в Python} 
+\begin{frame}
+% \frametitle{Створення рядків в Python}
+Список - впорядкована колекція даних різних типів.
+
+Список відноситься до змінних типів даних.
+
+Пустий список - []. Для створення списку на основі об'єкту, який можна перебирати, використовується функція list.
+\begin{figure}
+\begin{center}
+ \includegraphics[width=0.8\textwidth]{pictures/list.png}
+\caption{Список}
+\label{list} 
+\end{center}
+\end{figure}
+
+\end{frame}
+
+\subsection{Основні  функції для роботи зі списком s} 
+\begin{frame}
+    \begin{itemize}
+        \item<1-> \texttt{len(s)} - визначення числа елементів у списку;
+        \item<2-> \texttt{max(s)} - знаходження максимального значення;
+        \item<2-> \texttt{min(s)} - знаходження мінімального значення;
+        \item<3-> \texttt{sum(s)} - розрахунок суми;
+        \item<4-> \texttt{sorted(s)} - сортування за зростанням;
+        \item<4-> \texttt{sorted(s, reverse=True)} - сортування за спаданням.
+    \end{itemize}
+\end{frame}
+
+\subsection{Оператори для роботи зі списками} 
+\begin{frame}
+    \begin{itemize}
+        \item<1-> \texttt{+} - поєднання двох списків в один;
+        \item<2-> \texttt{*} - повторення списку;
+        \item<3-> \texttt{in} - перевірка входження елементу в список;
+        \item<4-> \texttt{del} - видалення елементу списку.
+    \end{itemize}
+\end{frame}
+
+% \subsection{Оператори для роботи зі списками} 
+\begin{frame}
+Зрізи дозволяють отримати деяку підмножину значень списку:
+
+\begin{center}
+\huge{lst[start:stop[:step]]}
+\end{center}
+\normalsize
+
+Для створення копії списка \texttt{lst} використовується команда \texttt{lst[:]} або \texttt{list(lst)}.
+
+Списки можна порівнювати між собою за допомогою операторів: >, <, == та !=.
+\end{frame}
+
+\subsection{Методи списку lst} 
+\begin{frame}
+\begin{center}
+об'єкт.метод(аргументи)
+\end{center}
+\begin{itemize}
+        \item<1-> \texttt{lst.append(el)} - додати елемент el в кінець списку lst;
+        \item<2-> \texttt{lst.insert(pos, el)} - додати елемент el до списку lst на місце з індексом pos;
+        \item<3-> \texttt{lst.remove(val)} - видаляє перший елемент val зі списку lst (якщо елементу немає в списку, отримуємо помилку);
+        \item<4-> \texttt{lst.pop()} - видаляє та \textbf{повертає} останній елемент зі списку lst;
+        \item<4-> \texttt{lst.pop(ind)} - видаляє та \textbf{повертає} елемент з індексом ind зі списку lst.
+    \end{itemize}
+\end{frame}
+
+\subsection{Методи списку lst} 
+\begin{frame}
+\begin{center}
+об'єкт.метод(аргументи)
+\end{center}
+\begin{itemize}
+        \item<1-> \texttt{lst.clear()} - видаляє всі елементи зі списку lst;
+        \item<2-> \texttt{lst.copy()} - повертає копію списку lst;
+        \item<3-> \texttt{lst.count(val)} - знаходить число елементів зі значенням val в списку lst;
+        \item<4-> \texttt{lst.index(val)} - знаходить індекс значення val в списку lst;
+        \item<4-> \texttt{lst.index(val, start)} - знаходить індекс значення val в списку lst, починаючи з індексу start;
+    \end{itemize}
+\end{frame}
+
+\subsection{Методи списку lst} 
+\begin{frame}
+\begin{center}
+об'єкт.метод(аргументи)
+\end{center}
+\begin{itemize}
+        \item<1-> \texttt{lst.reverse()} - змінює порядок елементів списку lst на зворотній;
+        \item<2-> \texttt{lst.sort()} - сортує елементи списку lst за зростанням;
+        \item<2-> \texttt{lst.sort(reverse=True)} - сортує елементи списку lst за спаданням;
+    \end{itemize}
+\end{frame}
+
+\subsection{Вкладені списки} 
+\begin{frame}
+\begin{center}
+Вкладений список = двовимірний список.
+
+lst = [line[:], line[:], line[:]]
+
+Щоб отримати один елемент використовуємо команду lst[i][j]. 
+\end{center}
+
+\end{frame}

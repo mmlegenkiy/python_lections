@@ -1,0 +1,144 @@
+\section{Лекція 2: Математика в Python}
+ 
+\begin{frame}
+\frametitle{Дані в Python}
+\begin{itemize}
+  \item Змінна - посилання на об'єкт
+  \item Оператор присвоювання: 
+  
+  \texttt{Операнд зліва = Операнд зправа}
+  \item Динамічна типізація
+  \item \texttt{a = 7; b = a}
+  \item Каскадне присвоювання: \texttt{a = b = c = 0}
+  \item Множинне присвоювання: \texttt{a, b = 1, 2}
+  \item Обмін значеннями: \texttt{a, b = b, a}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Функція id}
+Функція id(object) повертає «ідентифікаційний номер» об'єкта object, який є унікальним та незмінним.
+\begin{figure}
+\begin{center}
+ \includegraphics[width=0.7\textwidth]{pictures/id_func.png}
+\caption{Функція id}
+\label{id} 
+\end{center}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Функція type}
+Функция type(object) повертає тип об'єкту object. Його значення таке ж, як у змінної екземпляру object .\_\_ class\_\_.
+\begin{figure}
+\begin{center}
+ \includegraphics[width=0.5\textwidth]{pictures/python_data_types.png}
+\caption{Типи даних в Python}
+\label{data_types} 
+\end{center}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Імена змінних}
+\begin{itemize}
+  \item Перший символ - будь-яка літера латинського алфавіту a-z, A-Z та символ підкреслення \_. Інші символи - теж саме та цифри 0-9.
+  \item Іменами слід обирати іменники.
+  \item Імена повинні відображати сенс даних.
+  \item Неможна використовувати зарезервовані слова (Pycharm - Python Console - help() - keywords).
+  \item Не слід використовувати імена вбудованих функцій.
+\end{itemize}
+\end{frame}
+ 
+\begin{frame}
+\frametitle{Типи чисел в Python}
+\begin{itemize}
+  \item цілі числа (int);
+  \item дійсні числа (float);
+  \item комплексні числа (complex).
+\end{itemize} 
+  
+\end{frame}
+
+ 
+\begin{frame}
+\frametitle{Арифметичні операції}
+
+\begin{table}
+  \caption{Арифметичні операції}
+  \label{tab:}
+
+  \begin{center}
+    \begin{tabular}{|c|c|c|}
+      \hline
+      \textbf{Оператор} & \textbf{Опис} & \textbf{Пріоритет} \\
+      \hline
+      + & додавання & 2 \\
+       \hline
+      - & віднімання & 2 \\
+       \hline
+      * & множення & 3 \\
+       \hline
+       /,// & ділення & 3 \\
+       \hline
+       \% & залишок від ділення & 3 \\
+       \hline
+       ** & піднесення в ступінь & 4 \\
+       \hline
+    \end{tabular}
+  \end{center}
+\end{table}
+ \begin{center}
+   \tiny{// - ділення з округленням до найменшого цілого}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Скорочені оператори в Python}
+Оператор += додає значення правого операнда до лівого та присвоює цю суму лівому операнду.
+
+Аналогічно працюють оператори -=, *=, /=, \%=, **=, //=.  
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Математичні функції}
+\begin{itemize}
+  \item abs(a)
+  \item min(a, b, ...)
+  \item max(a, b, ...)
+  \item pow(a, b)
+  \item round(a)
+  \item round(a, n)
+\end{itemize} 
+  
+\end{frame}
+
+\begin{frame}
+\frametitle{Модуль math}
+Для того щоб звернутися до функцій модулю math, спочатку треба імпортувати цей модуль командою \texttt{import math}.
+\begin{figure}
+\begin{center}
+ \includegraphics[width=0.5\textwidth]{pictures/mathmod.png}
+\caption{Модуль math}
+\label{mathmodule} 
+\end{center}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Функції print та input}
+\begin{itemize}
+  \item print - вивід даних в консоль
+      \begin{itemize}
+        \item sep - роздільник між даними
+        \item end - останній символ (символи)
+     \end{itemize} 
+  \item input - ввід даних зі стандартного вхідного потоку (клавіатури)
+      \begin{itemize}
+        \item int(input())
+        \item float(input())
+     \end{itemize}
+ \end{itemize} 
+\end{frame}
