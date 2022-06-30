@@ -86,14 +86,52 @@
 % \frametitle{Логічні висновки}
 if - умовний оператор (оператор розгалуження).
 
-Форматування оператору if-elif-else.
-\begin{figure}
-\begin{center}
- \includegraphics[width=0.4\textwidth]{pictures/python-if-else-elif-example.png}
-\caption{Приклад роботи оператора if-else-elif}
-\label{if-else-elif} 
-\end{center}
-\end{figure}
+% \begin{center}
+\huge{if вираз:
+
+~~~~операції}
+
+
+\begin{flushleft}
+\normalsize
+Програма оцінює значення `вираз`, яке може дорівнювати True або False. Програма виконає операції тільки якщо вираз = True. Якщо вираз = False, цей шматок коду не буде виконуватись.
+\end{flushleft}
+% \end{center}
+\end{frame}
+
+\begin{frame}
+% \frametitle{Логічні висновки}
+\huge{if вираз:
+
+~~~~операції 1
+
+else:
+
+~~~~операції 2}
+
+
+\begin{flushleft}
+\normalsize
+Операції 1 виконуються тільки якщо вираз істинний (дорівнює True). Якщо вираз дорівнює False, виконуються операції 2. Для розділення цих блоків використовуються відступи.
+\end{flushleft}
+% \end{center}
+\end{frame}
+
+
+\begin{frame}
+% \frametitle{Логічні висновки}
+\huge{if вираз 1:
+
+~~~~операції 1
+
+elif вираз 2:
+
+~~~~операції 2
+
+else:
+
+~~~~операції 3}
+
 \end{frame}
 
  \subsection{Використання умовного оператору} 
@@ -101,9 +139,19 @@ if - умовний оператор (оператор розгалуження)
 % \frametitle{Логічні висновки}
 \begin{figure}
 \begin{center}
- \includegraphics[width=0.4\textwidth]{pictures/largest_number.jpeg}
-\caption{Знаходження максимального із трьох чисел}
-\label{largest_number} 
+ \includegraphics[width=0.6\textwidth]{pictures/find_min.jpg}
+\caption{Алгоритм знаходження мінімального із трьох чисел}
+\label{find_min} 
 \end{center}
 \end{figure}
+\end{frame}
+
+ \subsection{Тернарний умовний оператор} 
+\begin{frame}
+% % \frametitle{Логічні висновки}
+У Python існує конструкція, яка за своєю дією аналогічна конструкції if-else, але є виразом. Вона називається тернарним оператором.
+
+\Large{\texttt{значення\_1 if умова else значення\_2}}
+
+Тернарний оператор повертає результат.
 \end{frame}
