@@ -1,0 +1,36 @@
+\section{Лекція 13: Модулі та імпорт}
+ 
+ \subsection{Функція import} 
+\begin{frame}
+% \frametitle{Логічні висновки}
+Команда \texttt{import module} додає до глобального простору простор імен, що містить визнчені в модулі змінні, функції, класи. 
+
+Python має велику кількість стандартних бібліотек: \href{https://docs.python.org/3/library/}{https://docs.python.org/3/library/}.
+
+Щоб вказати псевдонім \texttt{mod} модуля \texttt{module} використовується команда \texttt{import module as mod}.
+
+Щоб виконати вибірковий імпорт функції \texttt{function} (з псевдонімом \texttt{fun}) із модуля \texttt{module} використовується команда \texttt{from module import function as fun}.
+
+\texttt{from module import *} - імпортувати все.
+
+\end{frame}
+
+\begin{frame}
+% \frametitle{Логічні висновки}
+В списку \texttt{sys.path} містеться перелік шляхів, за якими шукає Python модулі. Якщо модуль міститься в підкаталозі по відношенню до поточного (робочого), то його назву треба вказувати через крапку після назви каталогу. 
+
+В кожному модулі є змінна \texttt{\_\_name\_\_}. Якщо даний модуль запускається на виконання, то ця змінна дорівнюватиме \texttt{\_\_main\_\_}, інакше (якщо модуль імпортується) вона дорівнюватиме назві модуля.
+
+\end{frame}
+
+\subsection{Зовнішні модулі Python} 
+\begin{frame}
+% \frametitle{Логічні висновки}
+\begin{itemize}
+  \item NumPy - робота з багатовимірними масивами;
+  \item Matplotlib - відображення графіків;
+  \item Pygame - реалізація ппростої 2D-графіки;
+  \item Flask - простий фреймворк (часто для інформаційних сайтів);
+  \item Django - просунутий фреймворк для складних сайтів;
+\end{itemize}
+\end{frame}

@@ -98,3 +98,72 @@ Lambda-функція — анонімна функція.
 Щоб всередині функції працювати зі змінною \texttt{var} із зовнішнього (локального) простору імен використовується команда \texttt{nonlocal var}.
 
 \end{frame}
+
+\subsection{Замикання} 
+\begin{frame}
+% \frametitle{Логічні висновки}
+Замикання (closure) - функція, яка знаходиться всередині іншої функції і посилається на змінні оголошені в тілі зовнішньої функції (вільні змінні).
+
+Внутрішня функція створюється щоразу під час виконання зовнішньої. Щоразу під час виклику зовнішньої функції відбувається створення нового екземпляра внутрішньої функції, з новими посиланнями на змінні зовнішньої функції.
+
+Посилання на змінні зовнішньої функції дійсні всередині вкладеної функції до тих пір, поки працює вкладена функція, навіть якщо зовнішня функція закінчила роботу, і змінні вийшли з області видимості.
+\end{frame}
+
+\begin{frame}
+% \frametitle{Логічні висновки}
+Приклад замикання:
+
+\texttt{def say\_name(name):}
+ 
+\texttt{~~~~def say\_hello():}
+
+\texttt{~~~~~~~~print("Hello, ", name)}
+
+\texttt{~~~~return say\_hello}
+
+\texttt{f = say\_name("Max")}
+\end{frame}
+
+\subsection{Декоратори} 
+\begin{frame}
+% \frametitle{Логічні висновки}
+Декоратор - функція, яка використовується для зміни функції, використовується для додавання якогось функціоналу.
+
+\texttt{def func\_decorator(func):}
+
+\texttt{~~~~def wrapper(*args, **kwargs):}
+
+\texttt{~~~~~~~~operations before}
+
+\texttt{~~~~~~~~func(*args, **kwargs)}
+
+\texttt{~~~~~~~~operations after}
+
+\texttt{~~~~return wrapper}
+
+\texttt{some\_func = func\_decorator(some\_func)}
+
+Для декорування можна перед визначенням функції написати \texttt{@func\_decorator}.
+\end{frame}
+
+\begin{frame}
+% \frametitle{Логічні висновки}
+Декоратор з параметром:
+\texttt{def take\_parameter(p):}
+
+\texttt{~~~~def func\_decorator(func):}
+
+\texttt{~~~~~~~~def wrapper(*args, **kwargs):}
+
+\texttt{~~~~~~~~~~~~operations before}
+
+\texttt{~~~~~~~~~~~~func(p, *args, **kwargs)}
+
+\texttt{~~~~~~~~~~~~operations after}
+
+\texttt{~~~~~~~~return wrapper}
+
+\texttt{~~~~return func\_decorator}
+
+Для декорування можна перед визначенням функції написати \texttt{@take\_parameter(p)}.
+\end{frame}
