@@ -155,3 +155,138 @@ else:
 
 Тернарний оператор повертає результат.
 \end{frame}
+
+ \subsection{Функції all та any} 
+\begin{frame}
+% % \frametitle{Логічні висновки}
+Функція \texttt{all} повертає \texttt{True} якщо всі елементи переданого їй ітерованого об'єкту мають значення \texttt{True}.
+
+Функція \texttt{any} повертає \texttt{True} якщо хоча б один елемент переданого їй ітерованого об'єкту має значення \texttt{True}.
+\end{frame}
+
+\subsection{Бітові операції} 
+\begin{frame}
+% % \frametitle{Логічні висновки}
+Бітова операція НІ виконує інверсію біт.
+
+\begin{table}
+  \caption{Бітова операція НІ}
+  \label{tab:}
+
+  \begin{center}
+    \begin{tabular}{|c|c|}
+    \hline
+      \textbf{х} & \textbf{НІ} \\
+    \hline
+      0 & 1 \\
+    \hline
+      1 & 0 \\
+    \hline
+    \end{tabular}
+  \end{center}
+\end{table}
+
+В Python бітова операція НІ позначається як $\sim x$.
+
+\end{frame}
+
+\begin{frame}
+% % \frametitle{Логічні висновки}
+
+\begin{table}
+  \caption{Бітова операція І}
+  \label{tab:}
+
+  \begin{center}
+    \begin{tabular}{|c|c|c|}
+    \hline
+      \textbf{$x_1$} & \textbf{$x_2$} &  \textbf{І} \\
+    \hline
+      0 & 0 & 0 \\
+    \hline
+      0 & 1 & 0 \\
+    \hline
+      1 & 0 & 0 \\
+    \hline
+      1 & 1 & 1 \\
+    \hline
+    \end{tabular}
+  \end{center}
+\end{table}
+
+
+В Python бітова операція І позначається як $x_1 \& x_2$.
+
+За допомогою бітової операції І можна перевірити чи увімкнено відповідний біт числа, або вимкнути відповідні біти числа.
+
+\end{frame}
+
+\begin{frame}
+% % \frametitle{Логічні висновки}
+
+\begin{table}
+  \caption{Бітова операція АБО}
+  \label{tab:}
+
+  \begin{center}
+    \begin{tabular}{|c|c|c|}
+    \hline
+      \textbf{$x_1$} & \textbf{$x_2$} &  \textbf{АБО} \\
+    \hline
+      0 & 0 & 0 \\
+    \hline
+      0 & 1 & 1 \\
+    \hline
+      1 & 0 & 1 \\
+    \hline
+      1 & 1 & 1 \\
+    \hline
+    \end{tabular}
+  \end{center}
+\end{table}
+
+
+В Python бітова операція І позначається як $x_1$ | $x_2$.
+
+За допомогою бітової операції АБО можна перевірити чи увімкнено відповідний біт числа, або вимкнути відповідні біти числа.
+
+\end{frame}
+
+\begin{frame}
+% % \frametitle{Логічні висновки}
+
+\begin{table}
+  \caption{Бітова операція XOR}
+  \label{tab:}
+
+  \begin{center}
+    \begin{tabular}{|c|c|c|}
+    \hline
+      \textbf{$x_1$} & \textbf{$x_2$} &  \textbf{XOR} \\
+    \hline
+      0 & 0 & 0 \\
+    \hline
+      0 & 1 & 1 \\
+    \hline
+      1 & 0 & 1 \\
+    \hline
+      1 & 1 & 0 \\
+    \hline
+    \end{tabular}
+  \end{center}
+\end{table}
+
+Бітова операція XOR (виключне АБО) позначається як $x_1 \wedge x_2$. За допомогою XOR можна перемикати біти числа.
+
+\end{frame}
+
+\begin{frame}
+% % \frametitle{Логічні висновки}
+
+$\gg$ - зміщення біт праворуч.
+
+$\ll$  - зміщення біт ліворуч.
+
+$x = x \gg 1$ - еквівалентно цілочисленному діленню на два.
+
+\end{frame}
