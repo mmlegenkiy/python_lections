@@ -13,6 +13,8 @@
 % \frametitle{Створення рядків в Python}
 \end{frame}
 
+\subsection{Вступ до ООП} 
+
 \begin{frame}
 ООП - об'єктно орієнтоване програмування. В програмах ми оперуємо об'єктами даних.
 
@@ -27,6 +29,7 @@
 Поліморфізм - можливість через единий інтерфейс працювати з об'єктами різних класів.
 \end{frame}
 
+\subsection{Класи та їх атрибути} 
 \begin{frame}
 Визначення класу.
 Name - назва класу, attr\_1 та attr\_2 - атрибути класу. 
@@ -38,4 +41,35 @@ Name - назва класу, attr\_1 та attr\_2 - атрибути класу
 \texttt{~~~~attr\_2}
 
  Фактично клас створює простір імен з назвою Name. Атрибути класу можна знайти в словнику \texttt{Name.\_\_dict\_\_}. Створення екземпляра класу \texttt{a = Name()}.
+ 
+ \texttt{Name.\_\_doc\_\_} - містить рядок з описом класу.
+\end{frame}
+
+\begin{frame}
+\begin{itemize}
+  \item \texttt{Name.attr = val} - додає до класу \texttt{Name} атрибут \texttt{attr} зі значенням \texttt{val}.
+  \item \texttt{obj.attr = val} - додає до екземпляру класу \texttt{obj} атрибут \texttt{attr} зі значенням \texttt{val}.
+  \item \texttt{setattr(Name, 'attr', val)} - додає до класу \texttt{Name} атрибут \texttt{attr} зі значенням \texttt{val}.
+  \item \texttt{Name.attr} - читає атрибут \texttt{attr} класу \texttt{Name}, якщо такий атрибут відсутній видає помилку.
+  \item \texttt{getattr(Name, 'attr', val)} - читає атрибут \texttt{attr}  класу \texttt{Name}, якщо такий атрибут відсутній видає \texttt{val}.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\begin{itemize}
+  \item \texttt{del Name.attr} - видаляє з класу \texttt{Name} атрибут \texttt{attr}, якщо атрибут відсутній видає помилку.
+   \item \texttt{delattr(Name, 'attr')} - видаляє з класу \texttt{Name} атрибут \texttt{attr}, якщо атрибут відсутній видає помилку.
+  \item \texttt{hasattr(Name, 'attr')} - перевіряє чи є в класі \texttt{Name} атрибут \texttt{attr}.
+\end{itemize}
+Для об'єкту класа спочатку атрибут шукається в поточному просторі імен, а потім в просторі імен класу.
+\end{frame}
+
+\subsection{Методи класів} 
+\begin{frame}
+Методи - це якісь дії. Як викликати метод ?
+
+Праметр \texttt{self} дозволяє дізнатися, з яким із екземплярів класу працює метод.
+
+Викликати метод \texttt{set} для екземпляра \texttt{obj} класа \texttt{Name} можна так: \texttt{Name.set(obj)} або \texttt{obj.set()}.
 \end{frame}
