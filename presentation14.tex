@@ -85,3 +85,37 @@ Name - назва класу, attr\_1 та attr\_2 - атрибути класу
 У Python є збирач сміття, який видаляє об'єкти щойно вони стають непотрібними.
 
 \end{frame}
+
+\subsection{Магічний метод \_\_new\_\_. Паттерн Singleton} 
+\begin{frame}
+\texttt{\_\_new\_\_} - викликається перед створенням класу, поваертає адресу нового створеного об'єкту. 
+
+\texttt{def \_\_new\_\_(cls, *args, **kwargs):} 
+
+\texttt{~~~~якісь команди} 
+
+\texttt{~~~~return super().\_\_new\_\_(cls)} 
+
+\texttt{cls} посилається на поточний екземпляр класу. \texttt{super()} - посилається на базовий клас.
+
+\end{frame}
+
+\begin{frame}
+Паттерн Singleton - екземпляр класу в кожний момент часу повинен бути лише один.
+
+Прикдад для класу Name:
+
+\texttt{\_\_instance = None}
+ 
+\texttt{def \_\_new\_\_(cls, *args, **kwargs):} 
+
+\texttt{~~~~if cls.\_\_instance is None:} 
+
+\texttt{~~~~~~~~cls.\_\_instance = super().\_\_new\_\_(cls)} 
+
+\texttt{~~~~return cls.\_\_instance} 
+
+\texttt{def \_\_del\_\_(self):} 
+
+\texttt{~~~~Name.\_\_instance = None}
+\end{frame}
