@@ -137,3 +137,78 @@ Name - назва класу, attr\_1 та attr\_2 - атрибути класу
 \begin{frame}
 Статичні методи не мають доступу ні до атрибутів класу, ні до атрибутів його екземпляра. Вони об'явлюються за допомогою декоратора \texttt{@staticmethod}. Використовується для створення незалежних сервісних функцій всередині класу.  
 \end{frame}
+
+\subsection{Об'єкт \texttt{property} та декоратор \texttt{@property}} 
+\begin{frame}
+class Name():
+
+~~~~def \_\_init\_\_(self, p):
+
+~~~~~~~~self.\_\_p = p
+
+~~~~def set\_p(self, p):
+
+~~~~~~~~self.\_\_p = p
+
+~~~~def get\_p(self):
+
+~~~~~~~~return self.\_\_p
+
+~~~~p = property(get\_p, set\_p)
+
+n = Name(val)
+
+n.p = val1
+
+print(n.p)
+\end{frame}
+
+\begin{frame}
+class Name():
+
+~~~~def \_\_init\_\_(self, p):
+
+~~~~~~~~self.\_\_p = p
+
+~~~~def set\_p(self, p):
+
+~~~~~~~~self.\_\_p = p
+
+~~~~def get\_p(self):
+
+~~~~~~~~return self.\_\_p
+
+~~~~p = property()
+
+~~~~p = p.setter(set\_p)
+
+~~~~p = p.getter(get\_p)
+
+\end{frame}
+
+\begin{frame}
+class Name():
+
+~~~~def \_\_init\_\_(self, p):
+
+~~~~~~~~self.\_\_p = p
+
+~~~~@property
+
+~~~~def p(self, p):
+
+~~~~~~~~return self.\_\_p
+
+~~~~@p.setter
+
+~~~~def p(self):
+
+~~~~~~~~self.\_\_p = p
+
+~~~~@p.deleter
+
+~~~~def p(self):
+
+~~~~~~~~del self.\_\_p
+
+\end{frame}
