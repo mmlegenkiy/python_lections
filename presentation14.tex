@@ -212,3 +212,25 @@ class Name():
 ~~~~~~~~del self.\_\_p
 
 \end{frame}
+
+\subsection{Успадкування} 
+\begin{frame}
+\begin{figure}
+\begin{center}
+ \includegraphics[width=0.4\textwidth]{pictures/inheritance.jpg}
+\caption{успадкування}
+\label{inheritance} 
+\end{center}
+\end{figure}
+
+На малюнку \texttt{Human} - базовий або батьківський клас, а \texttt{BasketballPlaeyr} та \texttt{Employee} - підкласи або дочірні класи.
+
+\end{frame}
+
+\begin{frame}
+
+Відкриті атрибути батьківського класу є доступними із класів-спадкоємців. Коли викликається метод для дочірнього класу, то спочатку він шукається в поточному класі, а потім (якщо його не знайдено) - в батьківському класі. 
+
+Параметр в базових класах може посилатися не тільки на об'єкти поточного класу (перевизначені атрибути та методи), а й на об'єкти дочірніх класів.  
+
+\end{frame}
