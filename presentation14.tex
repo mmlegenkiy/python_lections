@@ -234,3 +234,20 @@ class Name():
 Параметр в базових класах може посилатися не тільки на об'єкти поточного класу (перевизначені атрибути та методи), а й на об'єкти дочірніх класів.  
 
 \end{frame}
+
+\begin{frame}
+
+\texttt{class Name:}
+
+\texttt{~~~~def \_\_init\_\_(self):}
+
+\texttt{~~~~~~~~pass}
+
+\texttt{class Subname(Name):}
+
+\texttt{~~~~def \_\_init\_\_(self):}
+
+\texttt{~~~~~~~~super().\_\_init\_\_()}
+ 
+Функція \texttt{super()} посилається на об'єкт базового класу. Виклик методів базового класу через функцію \texttt{super()}  називається \underline{делегування}.
+\end{frame}
