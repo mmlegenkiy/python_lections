@@ -1,5 +1,6 @@
-\section{Лекція 1: Знайомство з Python}
+\section*{Лекція 1: Знайомство з Python}
  
+\subsection{Вступ}
 \begin{frame}
 \frametitle{Викладач}
 \begin{wrapfigure}{r}{0.35\textwidth}
@@ -23,6 +24,16 @@ Telegram: \href{https://t.me/mlegenkiy}{@mlegenkiy}
 \end{frame}
 
 \begin{frame}
+\frametitle{Мотивація}
+\begin{itemize}
+   \item Комп'ютерна грамотність — оволодіння мінімальним набором знань і навичок роботи на персональному комп'ютері. 
+  \item Нині комп'ютерна грамотність —  вміння, таке ж необхідне, як і вміння читати й писати. 
+   \item Що робити ? Вивчати Python!
+\end{itemize}
+\end{frame}
+
+\subsection{Що таке Python?}
+\begin{frame}
 \frametitle{Python}
 % 	\frametitle{\insertsection} 
 % 	\framesubtitle{\insertsubsection}
@@ -44,9 +55,6 @@ Python (Пайтон) — інтерпретована об'єктно-оріє�
 \label{versions}
   \end{center}
 \end{figure}
-
-%\end{wrapfigure}
-
 \end{frame}
 
 \begin{frame}
@@ -66,6 +74,54 @@ Python (Пайтон) — інтерпретована об'єктно-оріє�
 \end{frame}
 
 \begin{frame}
+\frametitle{Переваги та недоліки Python}
+\begin{itemize}
+  \item Python  застосовується при розробці алгоритмів штучного інтелекту (в нейронних мережах);
+  \item Python  застосовується при розробці серверної частини сайтів за допомогою Django та Flask (Instagram, YouTube, алгоритми пошуку Google, Dropbox, тощо);
+  \item Python  застосовується в наукових проєктах та для обробки даних (Big Data);
+  \item Python  застосовується для Web Parsing.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Зручність та простота коду Python}
+\begin{figure}
+\begin{center}
+ \includegraphics[width=0.4\textwidth]{pictures/helloworld.png}
+\caption{Код на C, Java та Python для виведення на екран рядку "Hello, World!"}
+\label{python_site} 
+\end{center}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Python має велику кількість бібліотек та фреймворків}
+\begin{figure}
+\begin{center}
+ \includegraphics[width=0.6\textwidth]{pictures/python_frameworks1.png}
+\caption{Фреймворки Python}
+\label{python_site} 
+\end{center}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Python є однією із найпопулярніших мов програмування}
+\begin{figure}
+\begin{center}
+ \includegraphics[width=0.6\textwidth]{pictures/tiobe.png}
+\caption{З сайту \href{https://www.tiobe.com/tiobe-index/}{TIOBE}}
+\label{python_site} 
+\end{center}
+\end{figure}
+\tiny{TIOBE індекс (рейтинг мов програмування) — показник популярності мов програмування. Розраховується виходячи з кількості результів запитів до пошукових систем, що містять назву мови. Охоплює пошуки в Google, MSN, Yahoo!, Baidu, Вікіпедії і Youtube.}
+\end{frame}
+
+
+
+\subsection{Робота з Python}
+\begin{frame}
 \frametitle{Сайт Python}
 \begin{figure}
 \begin{center}
@@ -81,24 +137,42 @@ Python (Пайтон) — інтерпретована об'єктно-оріє�
 \frametitle{Встановлення Python}
 \begin{figure}
 \begin{center}
- \includegraphics[width=0.7\textwidth]{pictures/python_install.jpg}
+ \includegraphics[width=0.4\textwidth]{pictures/python_install.jpg}
 \caption{Встановлення Python}
 \label{python_install} 
+\end{center}
+\end{figure}
+\tiny{\href{https://uk.wikibooks.org/wiki/}{uk.wikibooks.org/wiki/Пориньте\_у\_Python\_3/Встановлення} - інструкція зі встановлення Python.}
+\end{frame}
+
+\begin{frame}
+\frametitle{Виконання коду Python}
+
+\begin{wrapfigure}{l}{0.45\textwidth}
+\includegraphics[width=0.35\textwidth]{pictures/idle.png}
+\caption{IDLE}
+\label{myphoto}
+\end{wrapfigure}
+
+Код Python може виконуватися в \textit{інтерактивному} та \textit{файловому} режимі.
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Виконання коду Python}
+\href{https://it-need.com/pep-8-posibnyk-z-napysannya-kodu-na-python/}{PEP8} містить перелік принципів написання красивого та лаконічного програмного коду мовою Python (PEP – Python Enhancement Proposal, пропозиції щодо розвитку Python).
+\begin{figure}
+\begin{center}
+ \includegraphics[width=0.5\textwidth]{pictures/pep8.png}
+\caption{PEP8}
+\label{python_site} 
 \end{center}
 \end{figure}
 \end{frame}
 
 \begin{frame}
-\frametitle{Виконання коду Python}
-\begin{itemize}
-  \item інтерактивний;
-  \item файловий.
-\end{itemize}
-\textbf{PEP 8} – Style Guide for Python Code
-\end{frame}
-
-\begin{frame}
 \frametitle{PyCharm}
+
 
 \begin{wrapfigure}{r}{0.4\textwidth}
 \includegraphics[width=0.25\textwidth]{pictures/pycharm_logo.png}
@@ -106,7 +180,11 @@ Python (Пайтон) — інтерпретована об'єктно-оріє�
 \label{pycharm_logo}
 \end{wrapfigure}
 
-
 \textbf{PyCharm} — інтегроване середовище розробки для мови програмування Python. \href{https://www.jetbrains.com/pycharm/download/}{Сайт} для завантаження PyCharm.
 \end{frame}
 
+
+\subsection{Організація курсу}
+\begin{frame}
+\frametitle{Структура курсу}
+\end{frame}

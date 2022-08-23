@@ -1,4 +1,6 @@
-\section{Лекція 2: Математика в Python}
+\section*{Лекція 2: Математика в Python}
+
+\subsection{Змінні}
  
 \begin{frame}
 \frametitle{Дані в Python}
@@ -29,7 +31,7 @@
 
 \begin{frame}
 \frametitle{Функція type}
-Функция type(object) повертає тип об'єкту object. Його значення таке ж, як у змінної екземпляру object .\_\_ class\_\_.
+type(object) повертає тип об'єкту object (object .\_\_ class\_\_).
 \begin{figure}
 \begin{center}
  \includegraphics[width=0.5\textwidth]{pictures/python_data_types.png}
@@ -50,6 +52,8 @@
   \item Не слід використовувати імена вбудованих функцій.
 \end{itemize}
 \end{frame}
+
+\subsection{Числа}
  
 \begin{frame}
 \frametitle{Типи чисел в Python}
@@ -60,6 +64,29 @@
 \end{itemize} 
   
 \end{frame}
+
+\begin{frame}
+\frametitle{Експоненційне представлення чисел}
+Python підтримує експоненційне представлення чисел. Наприклад:
+
+\LARGE{
+$5e2 = 5\ast 10^2 = 5\ast 100 = 500$
+
+$1e-2 = 1\ast 10^{-2} = 1\ast 0.01 = 0.01$  
+}
+\end{frame}
+
+\begin{frame}
+\frametitle{Cистеми числення}
+У Python можна використовувати різні системи числення. 
+\begin{itemize}
+\item Запис двійкового числа розпочинається з \texttt{0b}.
+\item Щоб представити число в двійковій формі використовується функція \texttt{bin}.
+\item Запис шістнадцяткового числа розпочинається з \texttt{0x}.
+\item Запис вісімкового числа розпочинається з \texttt{0o}. 
+\end{itemize}
+\end{frame}
+
 
  
 \begin{frame}
@@ -74,9 +101,7 @@
       \hline
       \textbf{Оператор} & \textbf{Опис} & \textbf{Пріоритет} \\
       \hline
-      + & додавання & 2 \\
-       \hline
-      - & віднімання & 2 \\
+      +, - & додавання, віднімання & 2 \\
        \hline
       * & множення & 3 \\
        \hline
@@ -96,11 +121,35 @@
 
 \begin{frame}
 \frametitle{Скорочені оператори в Python}
-Оператор += додає значення правого операнда до лівого та присвоює цю суму лівому операнду.
+\begin{table}
+  \caption{Скорочені арифметичні оператори}
+  \label{tab:}
 
-Аналогічно працюють оператори -=, *=, /=, \%=, **=, //=.  
+  \begin{center}
+    \begin{tabular}{|c|c|}
+      \hline
+      \textbf{Операція} & \textbf{Скорочений запис} \\
+      \hline
+      i = i + 1 & i += 1 \\
+       \hline
+      i = i - 1 & i -= 1 \\
+       \hline
+      i = i*2 & i *= 2  \\
+       \hline
+      i = i/2 & i /= 2 \\
+       \hline
+      i = i//2 & i //= 2 \\
+       \hline
+      i = i\%2  & i \%= 2 \\
+       \hline
+      i = i**2 & i **= 2 \\
+       \hline
+    \end{tabular}
+  \end{center}
+\end{table}
 \end{frame}
 
+\subsection{Математичні операції}
 
 \begin{frame}
 \frametitle{Математичні функції}
@@ -127,6 +176,8 @@
 \end{figure}
 \end{frame}
 
+\subsection{Вивід та ввід інформації}
+
 \begin{frame}
 \frametitle{Функції print та input}
 \begin{itemize}
@@ -141,25 +192,4 @@
         \item float(input())
      \end{itemize}
  \end{itemize} 
-\end{frame}
-
-\begin{frame}
-% \frametitle{Функції print та input}
-Python підтримує експоненційне представлення чисел. Наприклад:
-
-$5e2 = 5\ast 10^2 = 5\ast 100 = 500$
-
-$1e-2 = 1\ast 10^{-2} = 1\ast 0.01 = 0.01$  
-\end{frame}
-
-\begin{frame}
-% \frametitle{Функції print та input}
-У Python можна використовувати різні системи числення. 
-
-Запис двійкового числа розпочинається з \texttt{0b}. Щоб представити число в двійковій формі використовується функція \texttt{bin}.
-
-Запис шістнадцяткового числа розпочинається з \texttt{0x}.
-
-Запис шістнадцяткового числа розпочинається з \texttt{0o}. 
-
 \end{frame}
