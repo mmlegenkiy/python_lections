@@ -1,8 +1,8 @@
-\section{Лекція 11: Робота з файлами}
+\section*{Лекція 11: Робота з файлами}
  
- \subsection{Функція open} 
+ \subsection{Читання та запис файлу} 
 \begin{frame}
-% \frametitle{Логічні висновки}
+\frametitle{Функція open}
 Для того, щоб отримати доступ до файлу використовується функція \texttt{open}:
 
 \texttt{f = open(file[, mode='r', encoding=None, ...])}
@@ -13,28 +13,55 @@
   \item \texttt{encoding} - кодування файлу.
 \end{itemize}
 
-\texttt{f.read()} - читає весь вміст файлу \texttt{f}. 
+Після закінчення роботи з файлом його обов'язково слід закрити, застосувавши метод \texttt{f.close()}.
+
 \end{frame}
 
 \begin{frame}
-% % \frametitle{Логічні висновки}
-\texttt{f.read(4)} - читає перші 4 символи файлу \texttt{f} (читання розпочинається з місця, на яке вказує файлова позиція). Файлова позиція вказується в байтах.
+\frametitle{Методи роботи з файлом f}
 
-Для встановлення файлової позиції в положення \texttt{offset} використовується функція \texttt{f.seek(offset[, from\_what])}.
-
-Метод \texttt{f.tell()} повертає поточну файлову позицію.
-
-Метод \texttt{f.readline()} читає рядок із файлу.
-%
 \texttt{f} сприймається як ітерований об'єкт і при ітерації повертає новий прочитаний рядок із файлу.
 
-Метод \texttt{f.readlines()} читає вміст файлу та повертає список із рядків файлу.
-
-\texttt{f.close()} закриває файл.
+\begin{itemize}
+  \item<1->  \texttt{f.read()} - читає весь вміст файлу \texttt{f}. 
+  \item<1-> \texttt{f.readlines()} - читає вміст файлу та повертає список із рядків файлу. 
+  \item<2-> \texttt{f.readline()} - читає рядок із файлу.
+  \item<2-> \texttt{f.read(n)} - читає перші \texttt{n} символів файлу \texttt{f} (читання розпочинається з місця, на яке вказує файлова позиція). Файлова позиція вказується в байтах.
+  
+\end{itemize}
 \end{frame}
 
 \begin{frame}
-% % \frametitle{Логічні висновки}
+\frametitle{Методи роботи з файлом f}
+
+\texttt{f} сприймається як ітерований об'єкт і при ітерації повертає новий прочитаний рядок із файлу.
+
+\begin{itemize}
+  \item<1->  \texttt{f.seek(offset[, from\_what])} - встановлення файлової позиції в положення \texttt{offset}.
+  \item<1-> \texttt{f.tell()} - повертає поточну файлову позицію.
+  \item<2-> \texttt{f.write(string)} - запис рядка \texttt{string} до файлу. Метод      
+  \item<2-> \texttt{f.writelines(lst)} - запис декількох рядків до файлу, кожен рядок відповідає елементу списка \texttt{lst}.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Способи відкриття файлу}
+\begin{itemize}
+  \item<1-> \texttt{open(file\_path)} або \texttt{open(file\_path,"r")} - відкриття файлу для читання.
+  \item<2-> \texttt{open(file\_path,"w")} - відкриття файлу для запису.
+  \item<3-> \texttt{open(file\_path,"a")} - відкриття файлу для дозапису.
+  \item<4-> \texttt{open(file\_path,"a+")} - відкриття файлу для дозапису та читання.
+  \item<5-> \texttt{open(file\_path,"rb")} - відкриття бінарного файлу для читання.
+  \item<5-> \texttt{open(file\_path,"wb")} - відкриття бінарного файлу для запису.
+\end{itemize}
+
+\end{frame}
+
+\subsection{Обробка помилок}
+
+\begin{frame}
+\frametitle{Конструкція try-except}
 Якщо файл не знайдено виникає помилка \texttt{FileNotFoundError}. Для обробки таких та подібних виключень використовується конструкція:
 
 \texttt{try:}
@@ -49,40 +76,38 @@
 
 \texttt{~~~~operators\_3}
 
-Блок \texttt{finally} виконується в будь-якому випадку якщо трапилось виключення, або якщо не трапилось.
+Блок \texttt{finally} виконується в будь-якому випадку.
 
 \end{frame}
 
 \begin{frame}
-% % \frametitle{Логічні висновки}
+\frametitle{Менеджер контексту}
 Уникнути зупинки програми у випадку помилки при роботі з файлом можна за допомогою менеджера контексту:
 
+\vspace{0.5cm}
+
+\Large
 \texttt{with open(file\_path) as file:}
 
 \texttt{~~~~operators}
 
+\vspace{0.5cm}
+\normalsize
 Виконання блоку \texttt{with} завжди завершується закриттям файлу.
 
 \end{frame}
 
+\subsection{Робота з бінарними файлами}
 \begin{frame}
-% % \frametitle{Логічні висновки}
-\begin{itemize}
-  \item \texttt{open(file\_path)} або \texttt{open(file\_path,"r")} - відкриття файлу для читання.
-  \item \texttt{open(file\_path,"w")} - відкриття файлу для запису.
-  \item \texttt{open(file\_path,"a")} - відкриття файлу для дозапису.
-  \item \texttt{open(file\_path,"a+")} - відкриття файлу для дозапису та читання.
-\end{itemize}
-Для запису рядка \texttt{string} до файлу використовується метод \texttt{file.write(string)}. Метод \texttt{file.writelines(lst)} записує відразу декілька рядків до файлу, кожен рядок відповідає елементу списка \texttt{lst}.
-\end{frame}
-
-\begin{frame}
-% % \frametitle{Логічні висновки}
-Можна працювати з бінарними файлами.
-\begin{itemize}
-  \item \texttt{open(file\_path,"rb")} - відкриття бінарного файлу для читання.
-  \item \texttt{open(file\_path,"wb")} - відкриття бінарного файлу для запису.
-\end{itemize}
+\frametitle{Модуль pickle}
 Для роботи з бінарними файлами використовується модуль \texttt{pickle}: \texttt{import pickle}.
-Для запису до файлу \texttt{file} даних \texttt{data} у бінарному вигляді використовується метод \texttt{pickle.dump(data, file)}. Для зчитування даних із бінарного файлу \texttt{file} використовується метод \texttt{pickle.load(file)}.
+
+Для роботи із бінарними файлами їх треба відкрити для читання або запису в бінарному вигляді:
+\texttt{open(file\_path,"rb")} або  \texttt{open(file\_path,"wb")}.
+
+\begin{itemize}
+  \item \texttt{pickle.dump(data, file)} - запис до файлу \texttt{file} даних \texttt{data} у бінарному вигляді.
+  \item  \texttt{pickle.load(file)} - зчитування даних із бінарного файлу \texttt{file}.
+\end{itemize}
+
 \end{frame}

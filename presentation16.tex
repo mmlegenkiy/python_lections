@@ -1,0 +1,53 @@
+\section*{Лекція 16: Застосування Python. Створення Telegram бота}
+
+\subsection{Знайомство з pyTelegramBotApi} 
+
+\begin{frame}
+\frametitle{Створення бота через BotFather}
+
+Спочатку треба створити бота за допомогою \href{https://t.me/BotFather}{BotFather}. Після команди \texttt{/newbot} треба встановити \texttt{name} та \texttt{username} для боту і отримати \texttt{API Token}.
+ 
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=0.25\textwidth,height=0.4\textheight]{pictures/botFather.png}
+  \caption{\href{https://t.me/BotFather}{BotFather}}
+\label{function}
+  \end{center}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Луна-бот}
+
+ Для взаємодії з ботом через HTTP-запити використовується бібліотека pyTelegramBotAPI:
+\texttt{pip install pyTelegramBotAPI}.
+
+Найпростіший бот:
+
+\texttt{import telebot}
+
+\texttt{bot = telebot.TeleBot(API\_TOKEN)}
+
+\texttt{@bot.message\_handler(commands=['start'])}
+
+\texttt{def start(message):}
+
+\texttt{~~~~bot.send\_message(message.chat.id, message.text)}
+
+\texttt{bot.polling()}
+
+\end{frame}
+
+\subsection{Створення простого бота}
+\begin{frame}
+\frametitle{Робота з ботом в Python}
+
+https://mastergroosha.github.io/telegram-tutorial/
+
+\end{frame}
+
+\frametitle{Робота з ботом в Python}
+
+https://mastergroosha.github.io/telegram-tutorial/
+
+\end{frame}

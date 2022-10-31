@@ -1,13 +1,26 @@
-\section{Лекція 12: Помилки та виключення}
+\section*{Лекція 12: Помилки та виключення}
  
  \subsection{Вступ в обробку виключень} 
 \begin{frame}
-% \frametitle{Логічні висновки}
+\frametitle{Види виключень}
 Виключення бувають:
 \begin{itemize}
   \item в процесі виконання програми (можна оброблювати);
   \item в процесі компіляції програми (треба правильно писати програму).
 \end{itemize}
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=0.4\textwidth,height=0.4\textheight]{pictures/exceptions.png}
+  \caption{Виключення}
+\label{function}
+  \end{center}
+\end{figure}
+
+
+\end{frame}
+
+\begin{frame}
+\frametitle{<<Відловлювання>> виключень}
 
 \texttt{try:}
 
@@ -21,13 +34,15 @@
 
 \texttt{~~~~operations\_3}
 
+\vspace{0.5cm}
 При <<відловлюванні>> виключень враховується ієрархія класів виключень.
 \end{frame}
 
 \begin{frame}
+\frametitle{Класи виключень}
 \begin{figure}
 \begin{center}
- \includegraphics[width=0.75\textwidth]{pictures/exception.png}
+ \includegraphics[width=0.6\textwidth]{pictures/exception.png}
 \caption{Виключення}
 \label{exception} 
 \end{center}
@@ -36,7 +51,7 @@
 \end{frame}
 
 \begin{frame}
-% \frametitle{Логічні висновки}
+\frametitle{Конструкція try-except-else-finally}
 \texttt{try:}
 
 \texttt{~~~~operations\_1}
@@ -53,26 +68,77 @@
 
 \texttt{~~~~operations\_4}
 
-\texttt{val} - посилання на екземпляр класу виключення. Блок коду після оператору \texttt{else} виконується при штатному завершенні блоку після оператора \texttt{try}. Блок коду після оператору \texttt{finally} виконується завжди (до оператора \texttt{return}).
+\texttt{val} - екземпляр класу виключення. \texttt{operations\_3} - виконуються при штатному завершенні \texttt{operations\_1}. \texttt{operations\_4} - виконуються завжди (до \texttt{return}).
 \end{frame}
 
 \begin{frame}
-% \frametitle{Логічні висновки}
+\frametitle{Виключення та стек виклику функцій}
 При виникненні виключень всередині функцій вони розповсюджуються по стеку виклику функцій.
 
-Оброблювати виключення можна на будь-якому рівні цього стеку.
+Оброблювати виключення можна на будь-якому рівні стеку.
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=0.8\textwidth,height=0.4\textheight]{pictures/stack.png}
+  \caption{Стек виклику функцій}
+\label{function}
+  \end{center}
+\end{figure}
 \end{frame}
 
 \subsection{Генерація виключень} 
 \begin{frame}
-% \frametitle{Логічні висновки}
-Для генерації виключень використовується функція \texttt{raise}. Приклад:
+\frametitle{Генерація виключень}
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=0.4\textwidth,height=0.2\textheight]{pictures/assert-raise.png}
+  \caption{Генерація виключень}
+\label{function}
+  \end{center}
+\end{figure}
 
-\texttt{raise error(message)}
+Трапляються ситуації, коли формально помилки немає, але змінна набуває непотрібного значення. Тоді можна згенерувати виключення за допомогою функцій \texttt{assert} або \texttt{raise}.
 
-Тут \texttt{error} - клас виключення, \texttt{message} - повідомлення.
+\end{frame}
 
-Для своїх виключень прийнято використовувати клас \texttt{Exception}. Можна створювати власні класи виключень, що успадковуються від класу \texttt{Exception}, та <<ловити>> їх за допомогою конструкції \texttt{try/except}.
+\begin{frame}
+\frametitle{Функція raise}
+\texttt{try:}
+    
+\texttt{~~~~value = int(input())}
+
+\texttt{~~~~if value \% 2 != 0:}
+
+\texttt{~~~~~~~~raise ValueError('Value must be even!')}
+
+\texttt{~~~~print('Congratulations! Value is even!')}
+
+\texttt{except Exception as e:}
+
+\texttt{~~~~print(f'{e.\_\_class\_\_}: {e}')}
+
+Прийнято використовувати клас \texttt{Exception}. Можна створювати власні класи, що успадковуються від класу \texttt{Exception}, та <<ловити>> їх за допомогою \texttt{try/except}.
+\end{frame}
 
 
+\begin{frame}
+\frametitle{Функція assert}
+
+\texttt{try:}
+    
+\texttt{~~~~value = int(input())}
+
+\texttt{~~~~assert value \% 2 == 0, 'Value must be even!'}
+
+\texttt{~~~~print('Congratulations! Value is even!')}
+
+\texttt{except Exception as e:}
+
+\texttt{~~~~print(f'{e.\_\_class\_\_}: {e}')}
+
+\begin{enumerate}
+  \item assert не вимагає окремого блоку if — перевірка відбувається в один рядок;
+  \item для assert клас виключення — AssertionError.
+
+\end{enumerate}
 \end{frame}

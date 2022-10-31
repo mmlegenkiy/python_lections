@@ -1,8 +1,8 @@
-\section{Лекція 5: Умовні оператори}
+\section*{Лекція 5: Умовні оператори}
  
- \subsection{Логічні висновки} 
+ \subsection{Логічний тип даних} 
 \begin{frame}
-% \frametitle{Логічні висновки}
+\frametitle{True та False}
 \begin{itemize}
   \item True - істина
   \item False - брехня
@@ -17,9 +17,8 @@
 \end{figure}
 \end{frame}
 
- \subsection{Логічні вирази} 
 \begin{frame}
-% \frametitle{Логічні вирази}
+\frametitle{Логічні оператори}
 
 \begin{table}
   \caption{Логічні вирази}
@@ -48,9 +47,8 @@
 
 \end{frame}
 
- \subsection{Логічні оператори} 
 \begin{frame}
-% \frametitle{Логічні оператори}
+\frametitle{Логічні оператори}
 \begin{table}
   \caption{Логічні оператори}
   \label{tab:}
@@ -71,9 +69,9 @@
 \end{table}
 \end{frame}
 
-%  \subsection{Логічні оператори} 
+\subsection{Типове використання логічних операторів} 
 \begin{frame}
-% \frametitle{Робота з логічними виразами}
+\frametitle{Використання логічних операторів}
 \begin{itemize}
   \item Перевірка на парність/непарність;
   \item Перевірка на потрапляння/непотрапляння в інтервал;
@@ -81,9 +79,9 @@
  \end{itemize}
 \end{frame}
 
- \subsection{Умовний оператор} 
+\subsection{Оператор розгалуження} 
 \begin{frame}
-% \frametitle{Логічні висновки}
+\frametitle{Оператор if}
 if - умовний оператор (оператор розгалуження).
 
 % \begin{center}
@@ -100,8 +98,8 @@ if - умовний оператор (оператор розгалуження)
 \end{frame}
 
 \begin{frame}
-% \frametitle{Логічні висновки}
-\huge{if вираз:
+\frametitle{Оператор if-else}
+\Large{if вираз:
 
 ~~~~операції 1
 
@@ -119,8 +117,8 @@ else:
 
 
 \begin{frame}
-% \frametitle{Логічні висновки}
-\huge{if вираз 1:
+\frametitle{Оператор if -elif-else}
+\LARGE{if вираз 1:
 
 ~~~~операції 1
 
@@ -136,19 +134,18 @@ else:
 
  \subsection{Використання умовного оператору} 
 \begin{frame}
-% \frametitle{Логічні висновки}
+\frametitle{Знаходження мінімального}
 \begin{figure}
 \begin{center}
- \includegraphics[width=0.6\textwidth]{pictures/find_min.jpg}
+ \includegraphics[width=0.4\textwidth]{pictures/find_min.jpg}
 \caption{Алгоритм знаходження мінімального із трьох чисел}
 \label{find_min} 
 \end{center}
 \end{figure}
 \end{frame}
 
- \subsection{Тернарний умовний оператор} 
 \begin{frame}
-% % \frametitle{Логічні висновки}
+\frametitle{Тернарний умовний оператор}
 У Python існує конструкція, яка за своєю дією аналогічна конструкції if-else, але є виразом. Вона називається тернарним оператором.
 
 \Large{\texttt{значення\_1 if умова else значення\_2}}
@@ -156,9 +153,8 @@ else:
 Тернарний оператор повертає результат.
 \end{frame}
 
- \subsection{Функції all та any} 
 \begin{frame}
-% % \frametitle{Логічні висновки}
+\frametitle{Функції all та any}
 Функція \texttt{all} повертає \texttt{True} якщо всі елементи переданого їй ітерованого об'єкту мають значення \texttt{True}.
 
 Функція \texttt{any} повертає \texttt{True} якщо хоча б один елемент переданого їй ітерованого об'єкту має значення \texttt{True}.
@@ -166,7 +162,7 @@ else:
 
 \subsection{Бітові операції} 
 \begin{frame}
-% % \frametitle{Логічні висновки}
+\frametitle{Операція НІ}
 Бітова операція НІ виконує інверсію біт.
 
 \begin{table}
@@ -191,10 +187,10 @@ else:
 \end{frame}
 
 \begin{frame}
-% % \frametitle{Логічні висновки}
+\frametitle{Операція І}
 
 \begin{table}
-  \caption{Бітова операція І}
+  \caption{Бітова операція І: $x_1 \& x_2$}
   \label{tab:}
 
   \begin{center}
@@ -214,18 +210,15 @@ else:
   \end{center}
 \end{table}
 
-
-В Python бітова операція І позначається як $x_1 \& x_2$.
-
-За допомогою бітової операції І можна перевірити чи увімкнено відповідний біт числа, або вимкнути відповідні біти числа.
+Можна перевірити чи увімкнено або вимкнути відповідні біти.
 
 \end{frame}
 
 \begin{frame}
-% % \frametitle{Логічні висновки}
+\frametitle{Операція АБО}
 
 \begin{table}
-  \caption{Бітова операція АБО}
+  \caption{Бітова операція АБО: $x_1$ | $x_2$}
   \label{tab:}
 
   \begin{center}
@@ -245,18 +238,15 @@ else:
   \end{center}
 \end{table}
 
-
-В Python бітова операція І позначається як $x_1$ | $x_2$.
-
-За допомогою бітової операції АБО можна перевірити чи увімкнено відповідний біт числа, або вимкнути відповідні біти числа.
+Можна перевірити чи увімкнено або вимкнути відповідні біти.
 
 \end{frame}
 
 \begin{frame}
-% % \frametitle{Логічні висновки}
+\frametitle{Операція виключне АБО}
 
 \begin{table}
-  \caption{Бітова операція XOR}
+  \caption{Бітова операція XOR: $x_1 \wedge x_2$}
   \label{tab:}
 
   \begin{center}
@@ -276,17 +266,20 @@ else:
   \end{center}
 \end{table}
 
-Бітова операція XOR (виключне АБО) позначається як $x_1 \wedge x_2$. За допомогою XOR можна перемикати біти числа.
+За допомогою XOR можна перемикати біти числа.
 
 \end{frame}
 
 \begin{frame}
-% % \frametitle{Логічні висновки}
+\frametitle{Зміщення біт}
 
-$\gg$ - зміщення біт праворуч.
+\begin{itemize}
+  \item $\gg$ - зміщення біт праворуч.
+  \item  $\ll$  - зміщення біт ліворуч.
 
-$\ll$  - зміщення біт ліворуч.
+  \item $x = x \gg 1$ - еквівалентно цілочисленному діленню на два.
 
-$x = x \gg 1$ - еквівалентно цілочисленному діленню на два.
+\end{itemize}
+
 
 \end{frame}

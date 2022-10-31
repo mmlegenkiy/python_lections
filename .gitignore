@@ -12,3 +12,5 @@
 *.sty
 *.fdb_latexmk
 *.tex~
+pythonProject_bot/*
+test/*

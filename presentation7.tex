@@ -1,8 +1,8 @@
-\section{Лекція 7: Словники та кортежі}
+\section*{Лекція 7: Словники, кортежі та множини}
  
- \subsection{Що таке словник?} 
+\subsection{Словник} 
 \begin{frame}
-% \frametitle{Логічні висновки}
+\frametitle{Що таке словник?}
 Словник – невпорядкована структура даних, що дозволяє зберігати пари «ключ – значення». Їх іноді ще називають асоціативними масивами чи хеш-таблицями.
 
 \begin{figure}
@@ -16,15 +16,14 @@
 \end{frame}
 
 \begin{frame}
-% \frametitle{Логічні висновки}
+\frametitle{Робота зі словником}
 
 \begin{itemize}
   \item 
   Приклад словника d:
 
  d = \{ключ\_1: значення\_1,
- 
-  ключ\_2: значення\_2, ... 
+   ключ\_2: значення\_2, ... 
 
 ключ\_N: значення\_N\}
 \item Доступ до значення словника: d[ключ].
@@ -33,46 +32,48 @@
 Створювати словники можна за допомогою конструкції:
 
 d = dict(ключ\_1 = значення\_1, ...
-
  ключ\_N = значення\_N)
  
- \item Визначення пустого словника d = \{\} або d = dict()
+ \item Пустий словник: d = \{\} або d = dict()
 \end{itemize}
 
 \end{frame}
 
 \begin{frame}
-% \frametitle{Логічні висновки}
+\frametitle{Робота зі словником}
 Ключом в словнику можуть бути тільки дані незмінного типу. Значеннями можуть бути дані будь-якого типу.
 
 \begin{itemize}
-  \item Для визначення числа елементів в словнику використовується функція \texttt{len}.
+  \item Число елементів в словнику \texttt{len}.
   
-  \item Для видалення ключа \texttt{key} та його значення із словника \texttt{d} використовується команда \texttt{del d[key]}.
-  \item Для перевірки, що ключ \texttt{key} присутній в словнику \texttt{d}, використовується команда \texttt{key in d}.
-  \item Для перевірки, що ключ \texttt{key} відсутній в словнику \texttt{d}, використовується команда \texttt{key not in d}.
+  \item Видалення ключа \texttt{key} та значення із словника \texttt{d}: \texttt{del d[key]}.
+  \item Перевірка, що ключ \texttt{key} присутній (відсутній) в словнику \texttt{d}: \texttt{key in d} (\texttt{key not in d}).
 \end{itemize}
 \end{frame}
 
 \subsection{Методи словника d} 
+
 \begin{frame}
+\frametitle{Методи створення словника}
     \begin{itemize}
-        \item<1-> \texttt{d = dict.fromkeys(lst[, val])} - створює словник d, ключами якого є елементи списку lst, необов'язковий аргумент val - значення за замовчуванням;
+        \item<1-> \texttt{d = dict.fromkeys(lst[, val])} - створює словник d, ключі - елементи списку lst, val - значення за замовчуванням;
         \item<2-> \texttt{d.clear()} - очищує словник d;
-        \item<3-> \texttt{d.copy()} - створює копію словника d (інший варіант створення копії словника - функція \texttt{dict(d)} );
-        \item<4-> \texttt{d.get(key)} - отримати значення по ключу key зі словника d (на відміну від \texttt{d[key]}, при звертанні до неіснуючого ключа повертає \texttt{None} або другий параметр методу \texttt{get});
+        \item<3-> \texttt{d.copy()} або \texttt{dict(d)} - створює копію словника d;
+        \item<4-> \texttt{d.get(key)} - отримати значення по ключу key зі словника d (якщо ключ не існує - повертає \texttt{None} або другий параметр методу \texttt{get});
     \end{itemize}
 \end{frame}
 
 \begin{frame}
+\frametitle{Видалення елементів із словника}
     \begin{itemize}
-        \item<1-> \texttt{d.setdefaults(key[, val])} - якщо ключ key є в словнику d, то повертає значення за цим ключом, інакше повертає None (або необов'язковий параметр val) та додає до словника значення None (або необов'язковий параметр val) за ключом key;
-        \item<2-> \texttt{d.pop(key[, val])} - видаляє значення за ключем key зі словника d та повертає це значення, для неіснуючого ключа key повертає помилку або необов'язковий параметр val;
+        \item<1-> \texttt{d.setdefault(key[, val])} - якщо ключ key є в словнику d, то повертає значення за цим ключом, інакше повертає None (або val) та додає до словника значення None (або val) за ключом key;
+        \item<2-> \texttt{d.pop(key[, val])} - видаляє значення за ключем key зі словника d та повертає це значення, якщо ключа немає - повертає помилку або val;
         \item<3-> \texttt{d.popitem()} - видаляє та повертає значення за випадковим ключем зі словника d;
     \end{itemize}
 \end{frame}
 
 \begin{frame}
+\frametitle{Робота з елементами словника}
     \begin{itemize}
         \item<1-> \texttt{d.keys()} - повертає список ключів словника d;
         \item<1-> \texttt{d.values()} - повертає список значень словника d;
@@ -82,10 +83,9 @@ d = dict(ключ\_1 = значення\_1, ...
     \end{itemize}
 \end{frame}
 
-
- \subsection{Що таке кортеж?} 
+\subsection{Кортеж} 
 \begin{frame}
-% \frametitle{Логічні висновки}
+\frametitle{Що таке кортеж?}
 Кортеж (turple) – впорядкована, але незмінна колекція довільних даних.
 
 \begin{figure}
@@ -99,7 +99,7 @@ d = dict(ключ\_1 = значення\_1, ...
 \end{frame}
 
 \begin{frame}
-% \frametitle{Логічні висновки}
+\frametitle{Створення кортежу}
 Для створення кортежу треба вказувати кому, дужки не є обов'язковими. Варіанти створення кортежу:
 
 \begin{itemize}
@@ -114,9 +114,8 @@ d = dict(ключ\_1 = значення\_1, ...
 x, y = (1, 2)
 \end{frame}
 
- \subsection{Функції для роботи з кортежами} 
 \begin{frame}
-% \frametitle{Логічні висновки}
+\frametitle{Функції для роботи з кортежами}
 \begin{itemize}
   \item \texttt{len(t)} - знаходження довжини  кортежу \texttt{t};
   \item \texttt{t[i]} - звертання до \texttt{i}-го елементу  кортежу \texttt{t};
@@ -128,7 +127,7 @@ x, y = (1, 2)
 \end{frame}
 
 \begin{frame}
-% \frametitle{Логічні висновки}
+\frametitle{Функції для роботи з кортежами}
 \begin{itemize}
   \item \texttt{t = ()} або \texttt{t = turple()} - створення пустого кортежу;
   \item \texttt{t + (1,)} - додавання елементу до кортежу;
@@ -139,17 +138,17 @@ x, y = (1, 2)
 
 \end{frame}
 
-\subsection{Методи кортежу t} 
 \begin{frame}
+\frametitle{Методи кортежу t}
     \begin{itemize}
         \item<1-> \texttt{t.count(val)} - повертає число знайдених елементів із значенням \texttt{val};
         \item<2-> \texttt{t.index(val, start, stop)} - повертає індекс першого знайденого елементу із значенням \texttt{val}, \texttt{start} та \texttt{stop} індекси початку та кінця пошуку (необов'язкові параметри).
     \end{itemize}
 \end{frame}
 
- \subsection{Що таке множина?} 
+ \subsection{Множина} 
 \begin{frame}
-% \frametitle{Логічні висновки}
+\frametitle{Що таке множина?}
 Множина (set) – невпорядкована колекція унікальних елементів.
 
 \begin{figure}
@@ -163,13 +162,11 @@ x, y = (1, 2)
 \end{frame}
 
 \begin{frame}
-% \frametitle{Логічні висновки}
+\frametitle{Властивості множини}
 \begin{itemize}
   \item \texttt{a = \{1, 2, 3, "hello"\}} - множина;
   \item елементи множини - незмінні типи даних (числа, булеві значення, рядки, кортежі);
   \item не можуть бути елементами множин - списки, словники, інші множини;
-  \item \texttt{s = set()} - пуста множина;
-  \item \texttt{s = set(it)} - створює множину із унікальних елементів ітерованого об'єкту \texttt{it};
   \item звернутися до елементу множини за індексом неможливо;
   \item множина - ітерований об'єкт.
 \end{itemize}
@@ -178,21 +175,22 @@ x, y = (1, 2)
 
  \subsection{Функції для роботи з множиною} 
 \begin{frame}
-% \frametitle{Логічні висновки}
+\frametitle{Функції для роботи із множиною}
 \begin{itemize}
+  \item \texttt{s = set()} - пуста множина;
+  \item \texttt{s = set(it)} - створює множину із унікальних елементів ітерованого об'єкту \texttt{it};
   \item \texttt{len(s)} - повертає кількіть елементів у множині \texttt{s};
   \item \texttt{val in s} - перевірка чи присутній елемент \texttt{val} у множині \texttt{s};
-  \item \texttt{s.add(val)} - додає елемент \texttt{val} у множину \texttt{s};
-  \item \texttt{s.update(it)} - додає елементи ітерованого об'єкту \texttt{it} у множину \texttt{s};
+  
 \end{itemize}
 \end{frame}
 
 \begin{frame}
-% \frametitle{Логічні висновки}
+\frametitle{Методи множини}
 \begin{itemize}
-
-  \item \texttt{s.discard(val)} - видаляє елемент \texttt{val} із множини \texttt{s} (якщо елемент \texttt{val} відсутній у множині \texttt{s} - нічого не повертає);
-  \item \texttt{s.remove(val)} - видаляє елемент \texttt{val} із множини \texttt{s} (якщо елемент \texttt{val} відсутній у множині \texttt{s} - повертає помилку);
+\item \texttt{s.add(val)} - додає елемент \texttt{val} у множину \texttt{s};
+  \item \texttt{s.update(it)} - додає ітерований об'єкту \texttt{it} у множину \texttt{s};
+  \item \texttt{s.discard(val)} (\texttt{s.remove(val)}) - видаляє елемент \texttt{val} із множини \texttt{s}, якщо \texttt{val} відсутній у множині - нічого не повертає (повертає помилку);
   \item \texttt{s.pop()} - повертає та видаляє довільний елемент із множини \texttt{s} ;
   \item \texttt{s.clear()} - видаляє всі елементи із множини \texttt{s}.
 \end{itemize}
@@ -201,7 +199,7 @@ x, y = (1, 2)
 
  \subsection{Операції над множинами} 
 \begin{frame}
-% \frametitle{Логічні висновки}
+\frametitle{Перетин множин}
 \begin{itemize}
   \item \texttt{s1 \& s2} (або \texttt{s1.intersection(s2)}) - повертає множину, що є перетином множин \texttt{s1} та \texttt{s2};
   \item \texttt{s1 = s1 \& s2} (або \texttt{s1 \&= s2} або \texttt{s1.intersection\_update(s2)}) - записує до множини \texttt{s1} множину, що є перетином множин \texttt{s1} та \texttt{s2};
@@ -217,7 +215,7 @@ x, y = (1, 2)
 \end{frame}
 
 \begin{frame}
-% \frametitle{Логічні висновки}
+\frametitle{Об'єднання множин}
 \begin{itemize}
     \item \texttt{s1 | s2} (або \texttt{s1.union(s2)}) - повертає множину, що є об'єднанням множин \texttt{s1} та \texttt{s2};
   \item \texttt{s1 = s1 | s2} (або \texttt{s1 |= s2} ) - записує до множини \texttt{s1} множину, що є об'єднанням множин \texttt{s1} та \texttt{s2};
@@ -232,7 +230,7 @@ x, y = (1, 2)
 \end{frame}
 
 \begin{frame}
-% \frametitle{Логічні висновки}
+\frametitle{Різниця множин}
 \begin{itemize}
     \item \texttt{s1 - s2} - повертає множину, що є різницею множин \texttt{s1} та \texttt{s2};
   \item \texttt{s1 -= s2} - записує до множини \texttt{s1} множину, що є різницею множин \texttt{s1} та \texttt{s2};
@@ -247,7 +245,7 @@ x, y = (1, 2)
 \end{frame}
 
 \begin{frame}
-% \frametitle{Логічні висновки}
+\frametitle{Симетрична різниця множин}
 \begin{itemize}
     \item \texttt{s1 $\hat{}$ s2} - повертає множину, що є симетричною різницею множин \texttt{s1} та \texttt{s2};
 %   \item \texttt{s1 -= s2} - записує до множини \texttt{s1} множину, що є різницею множин \texttt{s1} та \texttt{s2};

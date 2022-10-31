@@ -1,6 +1,35 @@
-\section{Лекція 14: Об’єкти та класи}
-\subsection{Функція isinstance} 
+\section*{Лекція 14: Об’єкти та класи}
+\subsection{Вступ до ООП} 
+
 \begin{frame}
+\frametitle{ООП та класи}
+ООП - об'єктно орієнтоване програмування. В програмах ми оперуємо об'єктами даних. Об'єкт даних - екземпляр класу.
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=0.4\textwidth,height=0.4\textheight]{pictures/class.png}
+  \caption{Приклад класу в Python}
+\label{function}
+  \end{center}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Особливості ООП}
+\begin{itemize}
+  \item Класи та об'єкти класів.
+  \item Клас містить властивості та методи.
+  \item Інкапсуляція. Дані та методи класу можна приховувати.
+  \item Успадкування. Дочірні класи можуть розширювати функціональність базових.
+  \item Поліморфізм. Можливість через единий інтерфейс працювати з об'єктами різних класів.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Функція isinstance}
+
 Функція \texttt{isinstance(obj, type)} перевіряє чи належить об'єкт \texttt{obj} до типу даних \texttt{type} і повертає \texttt{True} або \texttt{False}. Замість \texttt{type} можна використовувати кортеж із декількох типів даних.
 
 Тип \texttt{bool} успадковується від типу \texttt{int}, тому ця функція показує, що значення \texttt{True} або \texttt{False} належать до типу \texttt{int}.
@@ -9,29 +38,12 @@
 
 \texttt{type(a) == int} або \texttt{type(a) in (int, float)}  
 
-
-% \frametitle{Створення рядків в Python}
-\end{frame}
-
-\subsection{Вступ до ООП} 
-
-\begin{frame}
-ООП - об'єктно орієнтоване програмування. В програмах ми оперуємо об'єктами даних.
-
-Класи та об'єкти класів.
-
-Клас містить властивості та методи.
-
-Дані та методи класу можна приховувати. Інкапсуляція.
-
-Успадкування. Властивості та методи успадковуються класами від базових класів. Дочірні класи розширюють функціональність базових.
-
-Поліморфізм - можливість через единий інтерфейс працювати з об'єктами різних класів.
 \end{frame}
 
 \subsection{Класи та їх атрибути} 
 \begin{frame}
-Визначення класу.
+\frametitle{Визначення класу}
+
 Name - назва класу, attr\_1 та attr\_2 - атрибути класу. 
 
 \texttt{class Name:}
@@ -46,36 +58,45 @@ Name - назва класу, attr\_1 та attr\_2 - атрибути класу
 \end{frame}
 
 \begin{frame}
+\frametitle{Робота з атрибутами класів}
+
 \begin{itemize}
-  \item \texttt{Name.attr = val} - додає до класу \texttt{Name} атрибут \texttt{attr} зі значенням \texttt{val}.
-  \item \texttt{obj.attr = val} - додає до екземпляру класу \texttt{obj} атрибут \texttt{attr} зі значенням \texttt{val}.
-  \item \texttt{setattr(Name, 'attr', val)} - додає до класу \texttt{Name} атрибут \texttt{attr} зі значенням \texttt{val}.
-  \item \texttt{Name.attr} - читає атрибут \texttt{attr} класу \texttt{Name}, якщо такий атрибут відсутній видає помилку.
-  \item \texttt{getattr(Name, 'attr', val)} - читає атрибут \texttt{attr}  класу \texttt{Name}, якщо такий атрибут відсутній видає \texttt{val}.
-\end{itemize}
+  \item <1-> \texttt{Name.attr = val} (\texttt{setattr(Name, 'attr', val)}) - додає до класу \texttt{Name} атрибут \texttt{attr} зі значенням \texttt{val}.
+  \item <2-> \texttt{obj.attr = val} - додає до екземпляру класу \texttt{obj} атрибут \texttt{attr} зі значенням \texttt{val}.
+  \item <3-> \texttt{Name.attr} (\texttt{getattr(Name, 'attr', val)}) - читає атрибут \texttt{attr} класу \texttt{Name}, якщо такий атрибут відсутній видає помилку (\texttt{val}).
+  \end{itemize}
 
 \end{frame}
 
 \begin{frame}
+\frametitle{Робота з атрибутами класів}
+
 \begin{itemize}
-  \item \texttt{del Name.attr} - видаляє з класу \texttt{Name} атрибут \texttt{attr}, якщо атрибут відсутній видає помилку.
-   \item \texttt{delattr(Name, 'attr')} - видаляє з класу \texttt{Name} атрибут \texttt{attr}, якщо атрибут відсутній видає помилку.
-  \item \texttt{hasattr(Name, 'attr')} - перевіряє чи є в класі \texttt{Name} атрибут \texttt{attr}.
-\end{itemize}
+  \item <1-> \texttt{hasattr(Name, 'attr')} - перевіряє чи є в класі \texttt{Name} атрибут \texttt{attr}.
+  \item <2->\texttt{del Name.attr} (\texttt{delattr(Name, 'attr')} ) - видаляє з класу \texttt{Name} атрибут \texttt{attr}, якщо атрибут відсутній видає помилку.
+ \end{itemize}
 Для об'єкту класа спочатку атрибут шукається в поточному просторі імен, а потім в просторі імен класу.
 \end{frame}
 
 \subsection{Методи класів} 
 \begin{frame}
-Методи - це якісь дії. Як викликати метод ?
+\frametitle{Виклик методу класа}
 
-Праметр \texttt{self} дозволяє дізнатися, з яким із екземплярів класу працює метод.
+Методи - це якісь дії.
 
-Викликати метод \texttt{set} для екземпляра \texttt{obj} класа \texttt{Name} можна так: \texttt{Name.set(obj)} або \texttt{obj.set()}.
+Параметр \texttt{self} дозволяє дізнатися, з яким із екземплярів класу працює метод.
+
+Викликати метод \texttt{set} для екземпляра \texttt{obj} класа \texttt{Name} можна так:
+
+ \begin{center}
+ \texttt{Name.set(obj)} або \texttt{obj.set()}.
+ \end{center} 
+
 \end{frame}
 
-\subsection{Ініціалізатор та фіналізатор} 
 \begin{frame}
+\frametitle{Ініціалізатор та фіналізатор}
+
 Магічні методи розпочинаються та закінчуються двома символами підкреслення.
 
 \texttt{\_\_init\_\_(self)} - викликається відразу після створення класу.
@@ -86,9 +107,12 @@ Name - назва класу, attr\_1 та attr\_2 - атрибути класу
 
 \end{frame}
 
-\subsection{Магічний метод \_\_new\_\_. Паттерн Singleton} 
 \begin{frame}
+\frametitle{Магічний метод \_\_new\_\_}
+
 \texttt{\_\_new\_\_} - викликається перед створенням класу, поваертає адресу нового створеного об'єкту. 
+
+\vspace{0.5cm}
 
 \texttt{def \_\_new\_\_(cls, *args, **kwargs):} 
 
@@ -96,14 +120,15 @@ Name - назва класу, attr\_1 та attr\_2 - атрибути класу
 
 \texttt{~~~~return super().\_\_new\_\_(cls)} 
 
+\vspace{0.5cm}
+
 \texttt{cls} посилається на поточний екземпляр класу. \texttt{super()} - посилається на базовий клас.
 
 \end{frame}
 
 \begin{frame}
-Паттерн Singleton - екземпляр класу в кожний момент часу повинен бути лише один.
-
-Прикдад для класу Name:
+\frametitle{Паттерн Singleton}
+Екземпляр класу в кожний момент часу повинен бути лише один. Приклад для класу Name:
 
 \texttt{\_\_instance = None}
  
@@ -118,107 +143,50 @@ Name - назва класу, attr\_1 та attr\_2 - атрибути класу
 \texttt{def \_\_del\_\_(self):} 
 
 \texttt{~~~~Name.\_\_instance = None}
+
 \end{frame}
 
 \begin{frame}
+\frametitle{Методи класу}
+
 Метод класу об'явлюється за допомогою декоратора \texttt{@classmethod}, як обов'язковий аргумент приймає посилання на поточний екземпляр класу \texttt{cls}. Приклад:
+\vspace{0.3cm}
 
 \texttt{@classmethod}
 
 \texttt{def method(cls, args):}
 
 \texttt{~~~~some operations}
-
-Метод класу працює з атрибутами класу, але не може звертатися до атрибутів екземпляра класу. Виклик метода класа:
-
-\texttt{Name.method(arg)}
+\vspace{0.3cm}
+Метод класу працює з атрибутами класу, але не може звертатися до атрибутів екземпляра класу. Виклик методу класу: \texttt{Name.method(arg)}
 \end{frame}
 
 \begin{frame}
-Статичні методи не мають доступу ні до атрибутів класу, ні до атрибутів його екземпляра. Вони об'явлюються за допомогою декоратора \texttt{@staticmethod}. Використовується для створення незалежних сервісних функцій всередині класу.  
+\frametitle{Статичні методи}
+Статичні методи не мають доступу ні до атрибутів класу, ні до атрибутів його екземпляра. Вони об'явлюються за допомогою декоратора \texttt{@staticmethod}. Приклад:
+
+\vspace{0.3cm}
+\texttt{@staticmethod}
+
+\texttt{def method(cls, args):}
+
+\texttt{~~~~some operations}
+\vspace{0.3cm}
+
+Використовується для створення незалежних сервісних функцій всередині класу.  
 \end{frame}
 
-\subsection{Об'єкт \texttt{property} та декоратор \texttt{@property}} 
+
+
+
+\subsection{Успадкування}
+ 
 \begin{frame}
-class Name():
-
-~~~~def \_\_init\_\_(self, p):
-
-~~~~~~~~self.\_\_p = p
-
-~~~~def set\_p(self, p):
-
-~~~~~~~~self.\_\_p = p
-
-~~~~def get\_p(self):
-
-~~~~~~~~return self.\_\_p
-
-~~~~p = property(get\_p, set\_p)
-
-n = Name(val)
-
-n.p = val1
-
-print(n.p)
-\end{frame}
-
-\begin{frame}
-class Name():
-
-~~~~def \_\_init\_\_(self, p):
-
-~~~~~~~~self.\_\_p = p
-
-~~~~def set\_p(self, p):
-
-~~~~~~~~self.\_\_p = p
-
-~~~~def get\_p(self):
-
-~~~~~~~~return self.\_\_p
-
-~~~~p = property()
-
-~~~~p = p.setter(set\_p)
-
-~~~~p = p.getter(get\_p)
-
-\end{frame}
-
-\begin{frame}
-class Name():
-
-~~~~def \_\_init\_\_(self, p):
-
-~~~~~~~~self.\_\_p = p
-
-~~~~@property
-
-~~~~def p(self, p):
-
-~~~~~~~~return self.\_\_p
-
-~~~~@p.setter
-
-~~~~def p(self):
-
-~~~~~~~~self.\_\_p = p
-
-~~~~@p.deleter
-
-~~~~def p(self):
-
-~~~~~~~~del self.\_\_p
-
-\end{frame}
-
-\subsection{Успадкування} 
-\begin{frame}
+\frametitle{Що таке успадкування?}
 \begin{figure}
 \begin{center}
  \includegraphics[width=0.4\textwidth]{pictures/inheritance.jpg}
-\caption{успадкування}
+\caption{Успадкування}
 \label{inheritance} 
 \end{center}
 \end{figure}
@@ -228,15 +196,36 @@ class Name():
 \end{frame}
 
 \begin{frame}
+\frametitle{Приклад батьківського класу}
+Відкриті атрибути батьківського класу є доступними із класів-спадкоємців.
 
-Відкриті атрибути батьківського класу є доступними із класів-спадкоємців. Коли викликається метод для дочірнього класу, то спочатку він шукається в поточному класі, а потім (якщо його не знайдено) - в батьківському класі. 
-
-Параметр в базових класах може посилатися не тільки на об'єкти поточного класу (перевизначені атрибути та методи), а й на об'єкти дочірніх класів.  
+\begin{figure}
+\begin{center}
+ \includegraphics[width=0.4\textwidth]{pictures/class-bird.png}
+\caption{Успадкування}
+\label{inheritance} 
+\end{center}
+\end{figure}
 
 \end{frame}
 
 \begin{frame}
+\frametitle{Приклад класів спадкоємців}
 
+Метод спочатку шукається в поточному класі, а потім (якщо його не знайдено) - в батьківському класі. 
+
+\begin{figure}
+\begin{center}
+ \includegraphics[width=0.4\textwidth]{pictures/class-signbird.png}
+\caption{Успадкування}
+\label{inheritance} 
+\end{center}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Делегування}
 \texttt{class Name:}
 
 \texttt{~~~~def \_\_init\_\_(self):}
